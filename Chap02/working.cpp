@@ -8,5 +8,4 @@ int main()
     int x = 42;
     int y = 7;
 
-    return 0;
 }
