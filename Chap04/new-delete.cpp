@@ -4,7 +4,7 @@
 #include <new>
 using namespace std;
 
-constexpr size_t count = 1024;
+constexpr size_t count = 1787934827934857;
 
 int main() {
     printf("allocate space for %lu long int at *ip with new\n", count);
@@ -12,12 +12,26 @@ int main() {
     // allocate array
     long int * ip;
     
-    try {
+   /*  try {
         ip = new long int [count];
     } catch (std::bad_alloc & ba) {
         fprintf(stderr, "Cannot allocate memory (%s)\n", ba.what());
         return 1;
+    } */
+/* 
+    there is another way of catching exceptions
+    if you dont want to use the try-catch block you 
+    can use this instead:
+    the complete try and catch block can be replaced
+    like follows:
+ */
+    ip = new(nothrow) long int [count];
+    if(ip == nullptr){
+        fprintf(stderr,"Cannot allocate memory \n");
+        return 1;
     }
+    
+    
     
     // initialize array
     for( long int i = 0; i < count; ++i ) {
