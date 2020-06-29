@@ -12,7 +12,8 @@ int main( int argc, char ** argv ) {
     
     // create/write the file
     printf("writing file\n");
-    FILE * fw = fopen(fn, "w");
+    FILE * fw = fopen(fn, "w");//creating a file handle
+    // this is the unix style which goes back to 1970s
     for(int i = 0; i < repeat; i++) {
         fputs(str, fw);
     }
@@ -24,12 +25,15 @@ int main( int argc, char ** argv ) {
     printf("reading file\n");
     char buf[maxstring];
     FILE * fr = fopen(fn, "r");
-    while(fgets(buf, maxstring, fr)) {
-        fputs(buf, stdout);
+    while(fgets(buf, maxstring, fr)) {// reads fr
+    // upto maxstring in length and puts in the buffer
+        fputs(buf, stdout);//stdout is the output file stream for the console 
     }
     
     fclose(fr);
-    remove(fn);
+    remove(fn);// removes the file from the system
+    // to use remove(fn) you need to close the file
+    // first so fclose(fr) is mandatory
     
     printf("done.\n");
     

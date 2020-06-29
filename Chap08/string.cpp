@@ -7,14 +7,16 @@ int main() {
     const static size_t maxbuf = 128;
     const char * s1 = "String one";
     const char * s2 = "String two";
-    char sd1[maxbuf];
-    char sd2[maxbuf];
+    char sd1[maxbuf];// dont want these initialized cause we will copy to it later
+    char sd2[maxbuf];// also we can tell how much character this string holds.
     int i = 0;
     char c = 0;
-    char * cp = nullptr;
+    char * cp = nullptr;// character pointer
     
     // strncpy -- copy a string
-    strncpy(sd1, s1, maxbuf);
+    strncpy(sd1, s1, maxbuf);// first argument is the destination
+    // second argument is the source and the third argument is the
+    // size of the buffer available in the destination
     printf("sd1 is %s\n", sd1);
     strncpy(sd2, s2, maxbuf);
     printf("sd2 is %s\n", sd2);
