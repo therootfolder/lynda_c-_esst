@@ -18,7 +18,8 @@ const char * u8_to_cstr(const uint8_t & x) {
 int main()
 {
     uint8_t x = 5;
-    uint8_t y = 10;
+    uint8_t y = 310;//the topmost bit is cut out 
+    //  and only the bottom 8 bits are put(310-256)
     uint8_t z = x | y;
     
     printf("x is %s\n", u8_to_cstr(x));
