@@ -8,6 +8,7 @@ void func(int x);// you can have non
 int main()
 {
     puts("Hello, World!");
+<<<<<<< HEAD
 bool a = true;
 bool b = false;
 
@@ -33,6 +34,10 @@ printf("size of x is %zd\n",y);
 
 
 
+=======
+
+   
+>>>>>>> master
 
     return 0;
 }
