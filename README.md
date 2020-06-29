@@ -1,2 +1,2 @@
-# lynda_c-_esst
+# lynda_c++_esst
 Lynda C++ essential training by Bill Weinman
