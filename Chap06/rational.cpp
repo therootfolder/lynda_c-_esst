@@ -8,7 +8,7 @@ class Rational {
     int _n = 0;
     int _d = 1;
 public:
-    Rational ( int numerator = 0, int denominator = 1 ) : _n(numerator), _d(denominator) {};
+    Rational ( int numerator = 0, int denominator = 1 ) : _n(numerator), _d(denominator) {};//constructor taking arguments
     Rational ( const Rational & rhs ) : _n(rhs._n), _d(rhs._d) {};    // copy constructor
     ~Rational ();
     inline int numerator() const { return _n; };
@@ -21,6 +21,8 @@ public:
 };
 
 Rational::~Rational() {
+    
+    printf("dtor:%d/%d\n",_n,_d);
     _n = 0; _d = 1;
 }
 
@@ -29,7 +31,8 @@ Rational & Rational::operator = ( const Rational & rhs ) {
         _n = rhs.numerator();
         _d = rhs.denominator();
     }
-    return *this;
+    return *this;// this keyword is always equal 
+    // to the pointer to the current object
 }
 
 Rational Rational::operator + ( const Rational & rhs ) const {
@@ -71,5 +74,12 @@ int main() {
     cout << a << " - " << b << " = " << a - b << endl;
     cout << a << " * " << b << " = " << a * b << endl;
     cout << a << " / " << b << " = " << a / b << endl;
+
+
+
+    
+
+
+
     return 0;
 }

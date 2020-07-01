@@ -35,7 +35,10 @@ Animal::Animal(const Animal & a) {
     _name = clone_prefix + a._name;
     _type = a._type;
     _sound = a._sound;
-}
+}// here this could have also been 
+//done using the : after parameter and
+// before curly brackets
+// Animal::Animal(const Animal & a):_type(a._type),_name(clone_prefix + a._name),_sound(a._sound){}
 
 Animal::~Animal() {
     printf("destructor: %s the %s\n", _name.c_str(), _type.c_str());
@@ -46,6 +49,7 @@ void Animal::print () const {
 }
 
 int main() {
+   
     Animal a;
     a.print();
     
