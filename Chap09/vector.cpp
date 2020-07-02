@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+ #include<cstdio>//for using printf
 using namespace std;
 
 int main() {
@@ -16,15 +17,28 @@ int main() {
     // iterator
     cout << endl << "Iterator:" << endl;
     vector<int>::iterator itbegin = vi1.begin();
+    // well if you thought
+    //  about using pointers think about what variable
+    //   type it points to since it is a
+    //    template you would have no idea .
     vector<int>::iterator itend = vi1.end();
+      
+ printf("itbegin:%d \t itend:%d\n",itbegin,itend);//itbegin:7149152          itend:7149192
+printf("%d\n",vi1[(vi1.end()-vi1.begin())/4 - 2]);// prints 1
+
+
     for (auto it = itbegin; it < itend; ++it) {
         cout << *it << ' ';
     }
     cout << endl;
+
+    vi1.insert(vi1.end(),11);
+cout<<vi1.back()<<endl;// prints 11
     
     cout << endl << "Index:" << endl;
     cout << "element at 5: " << vi1[5] << endl;
     cout << "element at 5: " << vi1.at(5) << endl;
+    
     
     cout << endl << "Range-based for loop:" << endl;
     for (int & i : vi1) {
@@ -58,6 +72,8 @@ int main() {
     int ia[size] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     cout << endl << "Vector from C-array: " << endl;
     vector<int> vi2(ia, ia + size);
+    printf("ia : %d\n",ia);//this prints out the address
+    // ia : 6421504
     for( int & i : vi2 ) {
         cout << i << ' ';
     }

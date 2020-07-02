@@ -6,7 +6,8 @@ using namespace std;
 
 int main() {
     string s1 = "This is a string";
-    string::iterator it;
+    string::iterator it;// this is essentally
+    //  saying it is a pointer to string
     
     // size & length
     cout << "size is same as length: " << s1.size() << endl;
@@ -45,6 +46,7 @@ int main() {
     
     // replace
     s1.replace(5, 2, "ain't");
+   // s1.replace(position_of_string, num_of_chars_to_replace, string_to_replace_it_with);
     cout << "after replace: " << s1 << endl;
     
     // substr

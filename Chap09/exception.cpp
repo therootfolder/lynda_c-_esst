@@ -12,13 +12,28 @@ public:
     const char * what() const throw() { return msg; }
 };
 
-void broken() {
+
+
+const E e_ouch("ouch!");
+const E e_bad("bad code");
+const E e_worse("don't do that!");
+
+
+
+void broken() {//all this function does is it
+// throws an exception using the default exception
+//class
     cout << "this is a broken function" << endl;
-    throw exception();
+    throw e_worse;
 }
 
 int main() {
     cout << "let's have an emergency!" << endl;
+    try{
     broken();
+
+    } catch (E & e){// even exception works here instead of E
+        cout<< e.what()<< endl;
+    }
     return 0;
 }

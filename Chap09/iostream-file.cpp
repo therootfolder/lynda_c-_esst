@@ -1,6 +1,6 @@
 // iostream-file.cpp by Bill Weinman <http://bw.org/>
 // updated 2018-10-31
-#include <cstdio>
+#include <cstdio>//provides the remove(filename) function
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -23,7 +23,7 @@ int main() {
     static char buf[128];
     cout << "read the file:" << endl;
     ifstream infile(filename);
-    while (infile.good()) {
+    while (infile.good()) {//The good() method of ios class in C++ is used to check if the stream is good enough to work. It means that this function will check if this stream has raised any error or not
         infile.getline(buf, sizeof(buf));
         cout << buf << endl;
     }
